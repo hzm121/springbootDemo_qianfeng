@@ -13,17 +13,16 @@ spring:
     mode: LEGACYHTML5 #用于非严格的HTML
     servlet:
       content-type: text/html
-
-datasource:
-  druid:
-    username: root
-    password: root
-    initial-size: 1
-    min-idle: 1
-    max-active: 20
-    test-on-borrow: true
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/shop
+  datasource:
+    druid:
+      url: jdbc:mysql://localhost:3306/shop?useUnicode=true&characterEncoding=utf-8&useSSL=false
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      password: root
+      username: root
+      initial-size: 1
+      min-idle: 1
+      max-active: 20
+      test-on-borrow: true
 mybatis:
   type-aliases-package: com.example.demo0.entity
   mapper-locations: classpath:mapper/*.xml
